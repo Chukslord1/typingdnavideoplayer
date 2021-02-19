@@ -1,6 +1,4 @@
-# Django Music Player
-
-A Property mannagement system built with django web framework
+# Typingdna Video Player
 
 
 
