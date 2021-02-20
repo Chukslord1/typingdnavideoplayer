@@ -4,6 +4,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import DetailView
 from django.core.paginator import Paginator
 from . models import Video
+from django.contrib import messages
 from django.contrib.auth.models import User, auth
 
 
@@ -45,6 +46,7 @@ def register(request):
             context={"message":"user already exists"}
             return render(request,"register.html",context)
         else:
+            request.session["reg_user"]["username"]=username
             user = User.objects.create(username=username,password=password, email=email)
             user.set_password(user.password)
             user.save()
