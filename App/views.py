@@ -51,6 +51,7 @@ def register(request):
                 }
             user = User.objects.create(username=username,password=password, email=email)
             user.set_password(user.password)
+            user.is_staff = True
             user.save()
             return redirect("App:enroll")
     return render(request,"register.html")
