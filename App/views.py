@@ -46,7 +46,9 @@ def register(request):
             context={"message":"user already exists"}
             return render(request,"register.html",context)
         else:
-            request.session["reg_user"]["username"]=username
+            request.session["reg_user"] = {
+                    "username": username
+                }
             user = User.objects.create(username=username,password=password, email=email)
             user.set_password(user.password)
             user.save()
