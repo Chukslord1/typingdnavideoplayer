@@ -1,12 +1,7 @@
 # Typingdna Video Player
 
-
-
-## demo 
-
-
 ## dependencies
-#### Python, Django==2.1
+#### Python, Django
 
 ## run 
 
